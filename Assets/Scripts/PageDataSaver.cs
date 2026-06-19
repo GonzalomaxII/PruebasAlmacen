@@ -12,7 +12,7 @@ public static class PageDataSaver
 {
     // Carpeta base: algo como /Android/data/com.tuJuego/files/notebook/
     private static string BasePath => 
-        Path.Combine(Application.persistentDataPath, "notebook");
+        Path.Combine(Application.persistentDataPath, "notebook_v2");
 
     public static void SavePage(int pageIndex, Texture2D drawing, string text)
     {

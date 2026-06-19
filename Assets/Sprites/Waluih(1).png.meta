@@ -1,0 +1,1157 @@
+fileFormatVersion: 2
+guid: 7f24d3e2a87e8b09188307ea6eea88ef
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8073715886734162918
+    second: Waluih(1)_0
+  - first:
+      213: -5764466025350605831
+    second: Waluih(1)_1
+  - first:
+      213: 992845900540406632
+    second: Waluih(1)_2
+  - first:
+      213: 8031671351450557918
+    second: Waluih(1)_3
+  - first:
+      213: 2257175840388097746
+    second: Waluih(1)_4
+  - first:
+      213: 5899302854687265534
+    second: Waluih(1)_5
+  - first:
+      213: -1156720392229846879
+    second: Waluih(1)_6
+  - first:
+      213: 8248237418355529790
+    second: Waluih(1)_7
+  - first:
+      213: -7918444151734325409
+    second: Waluih(1)_8
+  - first:
+      213: -3774905553216920259
+    second: Waluih(1)_9
+  - first:
+      213: -8164451800333247546
+    second: Waluih(1)_10
+  - first:
+      213: 2613777403902074499
+    second: Waluih(1)_11
+  - first:
+      213: -1966006742670883334
+    second: Waluih(1)_12
+  - first:
+      213: 7366751805791889304
+    second: Waluih(1)_13
+  - first:
+      213: 5979544071818362985
+    second: Waluih(1)_14
+  - first:
+      213: 718528399639448581
+    second: Waluih(1)_15
+  - first:
+      213: 6508849996381278825
+    second: Waluih(1)_16
+  - first:
+      213: -8600870336383181463
+    second: Waluih(1)_17
+  - first:
+      213: -4537476875281567729
+    second: Waluih(1)_18
+  - first:
+      213: -4057378270523234824
+    second: Waluih(1)_19
+  - first:
+      213: 1183693843152058838
+    second: Waluih(1)_20
+  - first:
+      213: 7826501218914185598
+    second: Waluih(1)_21
+  - first:
+      213: 5562590145330778981
+    second: Waluih(1)_22
+  - first:
+      213: -4999352803980870717
+    second: Waluih(1)_23
+  - first:
+      213: -2423036643219577039
+    second: Waluih(1)_24
+  - first:
+      213: -7729563299817828978
+    second: Waluih(1)_25
+  - first:
+      213: -8219755331223766626
+    second: Waluih(1)_26
+  - first:
+      213: -7993384294648405408
+    second: Waluih(1)_27
+  - first:
+      213: -2072336753230912411
+    second: Waluih(1)_28
+  - first:
+      213: 2624909324381037818
+    second: Waluih(1)_29
+  - first:
+      213: 6555937143214622470
+    second: Waluih(1)_30
+  - first:
+      213: -8119514700306691002
+    second: Waluih(1)_31
+  - first:
+      213: 5573219743604753654
+    second: Waluih(1)_32
+  - first:
+      213: -6681231166372514685
+    second: Waluih(1)_33
+  - first:
+      213: 7910743423905715879
+    second: Waluih(1)_34
+  - first:
+      213: 4546724793959373107
+    second: Waluih(1)_35
+  - first:
+      213: -7179469091432055304
+    second: Waluih(1)_36
+  - first:
+      213: 4613364893992892979
+    second: Waluih(1)_37
+  - first:
+      213: 964114748095258084
+    second: Waluih(1)_38
+  - first:
+      213: -8019929019860567396
+    second: Waluih(1)_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Waluih(1)_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 163
+        width: 23
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1448c96d2664ff80800000000000000
+      internalID: -8073715886734162918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 164
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f35b2ff0b08000b0800000000000000
+      internalID: -5764466025350605831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_2
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 164
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86be962161c47cd00800000000000000
+      internalID: 992845900540406632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 163
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edd54ef5a8a367f60800000000000000
+      internalID: 8031671351450557918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_4
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 163
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d62de1c779135f10800000000000000
+      internalID: 2257175840388097746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_5
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 163
+        width: 21
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef21514c0b88ed150800000000000000
+      internalID: 5899302854687265534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_6
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 164
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a080bc8ee082ffe0800000000000000
+      internalID: -1156720392229846879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_7
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 164
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e389a202b30a77270800000000000000
+      internalID: 8248237418355529790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_8
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 163
+        width: 22
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5f2b1a6ff80c1290800000000000000
+      internalID: -7918444151734325409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_9
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 163
+        width: 21
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d352bdf4667dc9bc0800000000000000
+      internalID: -3774905553216920259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_10
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 112
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cb965f385a02be80800000000000000
+      internalID: -8164451800333247546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_11
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 112
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38e968153b0064420800000000000000
+      internalID: 2613777403902074499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_12
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 113
+        width: 20
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af5441da84757b4e0800000000000000
+      internalID: -1966006742670883334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_13
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 112
+        width: 20
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89761b49cb5fb3660800000000000000
+      internalID: 7366751805791889304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_14
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 113
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 960c68ff6ab9bf250800000000000000
+      internalID: 5979544071818362985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_15
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 112
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50c0a85c5c9b8f900800000000000000
+      internalID: 718528399639448581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_16
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 112
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 962db9a1694145a50800000000000000
+      internalID: 6508849996381278825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_17
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 113
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96d9fa89ff193a880800000000000000
+      internalID: -8600870336383181463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_18
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 112
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f00fa4092d4a701c0800000000000000
+      internalID: -4537476875281567729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_19
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 113
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f5e21ab5fb41b7c0800000000000000
+      internalID: -4057378270523234824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_20
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 59
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d935e367435d6010800000000000000
+      internalID: 1183693843152058838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_21
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 60
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e71ba8b54615d9c60800000000000000
+      internalID: 7826501218914185598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_22
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 60
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 563978be34a423d40800000000000000
+      internalID: 5562590145330778981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_23
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 59
+        width: 23
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cbfddbcc1bbe9ab0800000000000000
+      internalID: -4999352803980870717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_24
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 60
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1376423c205af5ed0800000000000000
+      internalID: -2423036643219577039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_25
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 59
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8d467db1231bb490800000000000000
+      internalID: -7729563299817828978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_26
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 58
+        width: 23
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e99b8cd83109ded80800000000000000
+      internalID: -8219755331223766626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_27
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 58
+        width: 22
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 062ab44b55bc11190800000000000000
+      internalID: -7993384294648405408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_28
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 57
+        width: 23
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5646fa0e3b49d33e0800000000000000
+      internalID: -2072336753230912411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_29
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 59
+        width: 25
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af4a7578f1d8d6420800000000000000
+      internalID: 2624909324381037818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_30
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 8
+        width: 20
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 607c81fc81e5bfa50800000000000000
+      internalID: 6555937143214622470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_31
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 8
+        width: 20
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64c48ab2660b15f80800000000000000
+      internalID: -8119514700306691002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_32
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 8
+        width: 18
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f441c024dd085d40800000000000000
+      internalID: 5573219743604753654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_33
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 8
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 384f81227af7743a0800000000000000
+      internalID: -6681231166372514685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_34
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 8
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a6582b2b3b98cd60800000000000000
+      internalID: 7910743423905715879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_35
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 7
+        width: 23
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 339d86b4c16391f30800000000000000
+      internalID: 4546724793959373107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_36
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 7
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fdbb4956e66d5c90800000000000000
+      internalID: -7179469091432055304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_37
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 8
+        width: 18
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33a34bdade6f50040800000000000000
+      internalID: 4613364893992892979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_38
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 7
+        width: 20
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eddeea5149316d00800000000000000
+      internalID: 964114748095258084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waluih(1)_39
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 8
+        width: 21
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9a3d5f3c0d73b090800000000000000
+      internalID: -8019929019860567396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Waluih(1)_0: -8073715886734162918
+      Waluih(1)_1: -5764466025350605831
+      Waluih(1)_10: -8164451800333247546
+      Waluih(1)_11: 2613777403902074499
+      Waluih(1)_12: -1966006742670883334
+      Waluih(1)_13: 7366751805791889304
+      Waluih(1)_14: 5979544071818362985
+      Waluih(1)_15: 718528399639448581
+      Waluih(1)_16: 6508849996381278825
+      Waluih(1)_17: -8600870336383181463
+      Waluih(1)_18: -4537476875281567729
+      Waluih(1)_19: -4057378270523234824
+      Waluih(1)_2: 992845900540406632
+      Waluih(1)_20: 1183693843152058838
+      Waluih(1)_21: 7826501218914185598
+      Waluih(1)_22: 5562590145330778981
+      Waluih(1)_23: -4999352803980870717
+      Waluih(1)_24: -2423036643219577039
+      Waluih(1)_25: -7729563299817828978
+      Waluih(1)_26: -8219755331223766626
+      Waluih(1)_27: -7993384294648405408
+      Waluih(1)_28: -2072336753230912411
+      Waluih(1)_29: 2624909324381037818
+      Waluih(1)_3: 8031671351450557918
+      Waluih(1)_30: 6555937143214622470
+      Waluih(1)_31: -8119514700306691002
+      Waluih(1)_32: 5573219743604753654
+      Waluih(1)_33: -6681231166372514685
+      Waluih(1)_34: 7910743423905715879
+      Waluih(1)_35: 4546724793959373107
+      Waluih(1)_36: -7179469091432055304
+      Waluih(1)_37: 4613364893992892979
+      Waluih(1)_38: 964114748095258084
+      Waluih(1)_39: -8019929019860567396
+      Waluih(1)_4: 2257175840388097746
+      Waluih(1)_5: 5899302854687265534
+      Waluih(1)_6: -1156720392229846879
+      Waluih(1)_7: 8248237418355529790
+      Waluih(1)_8: -7918444151734325409
+      Waluih(1)_9: -3774905553216920259
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
