@@ -41,10 +41,20 @@ public class Pathfinding : MonoBehaviour
         // valores de búsquedas anteriores (varios clientes pueden pedir paths distintos)
         GenerarGridDesdeMapa();
 
-        if (cells[endPos.x, endPos.y].isWall)
+        // Si el destino no es caminable (estante, heladera, etc.),
+        // busca automáticamente la celda adyacente válida
+        if (!MapaCliente.Instance.EsCaminable(endPos.x, endPos.y))
         {
-            Debug.LogWarning("El destino es una celda no caminable");
-            return null;
+            Vector2Int celdaAdyacente = ObtenerCeldaAdyacenteValida(endPos);
+            
+            if (celdaAdyacente == Vector2Int.one * -1) // indicador de "no encontrada"
+            {
+                Debug.LogWarning($"No hay celda adyacente válida al destino {endPos}");
+                return null;
+            }
+
+            Debug.Log($"Destino no caminable {endPos}, usando celda adyacente {celdaAdyacente}");
+            endPos = celdaAdyacente;
         }
 
         List<Vector2Int> cellsToSearch = new List<Vector2Int> { startPos };
@@ -94,6 +104,34 @@ public class Pathfinding : MonoBehaviour
 
         Debug.Log("Path not found");
         return null;
+    }
+    private Vector2Int ObtenerCeldaAdyacenteValida(Vector2Int celdaNoTransitable)
+    {
+        // Chequea las 4 direcciones adyacentes (arriba, abajo, izquierda, derecha)
+        Vector2Int[] direcciones = new Vector2Int[]
+        {
+            new Vector2Int(0, 1),   // arriba
+            new Vector2Int(0, -1),  // abajo
+            new Vector2Int(1, 0),   // derecha
+            new Vector2Int(-1, 0)   // izquierda
+        };
+
+        foreach (Vector2Int dir in direcciones)
+        {
+            Vector2Int adyacente = celdaNoTransitable + dir;
+
+            // Verifica que esté dentro del mapa y sea caminable
+            if (adyacente.x >= 0 && adyacente.x < ancho &&
+                adyacente.y >= 0 && adyacente.y < alto &&
+                MapaCliente.Instance.EsCaminable(adyacente.x, adyacente.y))
+            {
+                return adyacente;
+            }
+        }
+
+        // Si no encuentra ninguna adyacente válida, devuelve un indicador especial
+        Debug.LogWarning($"No hay celda adyacente válida a {celdaNoTransitable}");
+        return Vector2Int.one * -1;
     }
 
     private void SearchCellNeighbors(Vector2Int cellPos, Vector2Int endPos,
