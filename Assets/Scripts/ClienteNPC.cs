@@ -11,22 +11,17 @@ public class ClienteNPC : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
 
-    // --- Parámetros del Animator (Hashes para optimizar) ---
-    private int isWalkingHash;
-    private int inputXHash;
-    private int inputYHash;
-    private int lastInputXHash;
-    private int lastInputYHash;
+    private int isWalkingHash, inputXHash, inputYHash, lastInputXHash, lastInputYHash;
+    private Vector2 ultimaDireccion = Vector2.down;
 
-    // Guardamos la última dirección para cuando el NPC se detenga
-    private Vector2 ultimaDireccion = Vector2.down; // Por defecto mira hacia abajo
+    // --- EL CEREBRO LEERÁ ESTO PARA SABER SI YA LLEGÓ ---
+    public bool estaMoviendose { get; private set; } 
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        // Convertimos los nombres exactos de tus parámetros en IDs de Unity
         isWalkingHash = Animator.StringToHash("isWalking");
         inputXHash = Animator.StringToHash("InputX");
         inputYHash = Animator.StringToHash("InputY");
@@ -41,21 +36,21 @@ public class ClienteNPC : MonoBehaviour
 
         if (camino == null || camino.Count == 0)
         {
-            Debug.LogWarning("No se encontró camino al destino");
+            Debug.LogWarning("El cuerpo no encontró camino al destino");
+            estaMoviendose = false;
             return;
         }
 
-        StopCoroutine(nameof(SeguirCamino));
+        StopAllCoroutines(); // Detiene cualquier movimiento anterior
         StartCoroutine(SeguirCamino(camino));
     }
 
     private IEnumerator SeguirCamino(List<Vector2Int> camino)
     {
-        // 1. EQUIVALENTE A: animator.SetBool("isWalking", true); de tu jugador
+        estaMoviendose = true; // Avisa que arrancó
         if (animator != null) animator.SetBool(isWalkingHash, true);
 
-        int inicio = 0;
-        if (camino.Count > 1) inicio = 1;
+        int inicio = camino.Count > 1 ? 1 : 0;
 
         for (int i = inicio; i < camino.Count; i++)
         {
@@ -63,16 +58,11 @@ public class ClienteNPC : MonoBehaviour
 
             while (Vector2.Distance(transform.position, destino) > toleranciaLlegada)
             {
-                // Obtenemos el "Input" del NPC (su dirección matemática)
                 Vector2 direccion = ((Vector2)destino - rb.position).normalized;
-                
-                // Guardamos esta dirección constantemente para saber a dónde miraba antes de parar
                 ultimaDireccion = direccion;
 
-                // Movemos físicamente al NPC
                 rb.MovePosition(rb.position + direccion * velocidad * Time.fixedDeltaTime);
 
-                // 2. EQUIVALENTE A: animator.SetFloat("InputX" / "InputY"); de tu jugador
                 if (animator != null)
                 {
                     animator.SetFloat(inputXHash, direccion.x);
@@ -85,14 +75,13 @@ public class ClienteNPC : MonoBehaviour
             rb.MovePosition(destino);
         }
 
-        // 3. EQUIVALENTE A: context.canceled de tu jugador
         if (animator != null)
         {
             animator.SetBool(isWalkingHash, false);
-            
-            // Le pasamos la última dirección al Blend Tree Idle para que quede mirando hacia allá
             animator.SetFloat(lastInputXHash, ultimaDireccion.x);
             animator.SetFloat(lastInputYHash, ultimaDireccion.y);
         }
+        
+        estaMoviendose = false; // Avisa que ya llegó
     }
 }
