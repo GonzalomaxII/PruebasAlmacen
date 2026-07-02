@@ -135,35 +135,42 @@ public class Pathfinding : MonoBehaviour
     }
 
     private void SearchCellNeighbors(Vector2Int cellPos, Vector2Int endPos,
-        List<Vector2Int> cellsToSearch, HashSet<Vector2Int> searchedCells)
+    List<Vector2Int> cellsToSearch, HashSet<Vector2Int> searchedCells)
     {
-        for (int x = cellPos.x - 1; x <= cellPos.x + 1; x++)
+        // Definimos las 4 direcciones cardinales (Arriba, Abajo, Derecha, Izquierda)
+        Vector2Int[] direcciones = new Vector2Int[]
         {
-            for (int y = cellPos.y - 1; y <= cellPos.y + 1; y++)
+            new Vector2Int(0, 1),   // arriba
+            new Vector2Int(0, -1),  // abajo
+            new Vector2Int(1, 0),   // derecha
+            new Vector2Int(-1, 0)   // izquierda
+        };
+
+        foreach (Vector2Int dir in direcciones)
+        {
+            Vector2Int neighborPos = cellPos + dir;
+
+            // Validaciones básicas de límites del mapa
+            if (neighborPos.x < 0 || neighborPos.x >= ancho || neighborPos.y < 0 || neighborPos.y >= alto) continue;
+            // Si ya se evaluó o es un obstáculo, lo salteamos
+            if (searchedCells.Contains(neighborPos)) continue;
+            if (cells[neighborPos.x, neighborPos.y].isWall) continue;
+
+            // Como solo nos movemos en línea recta, cada paso cuesta exactamente 10
+            int gCostToNeighbor = cells[cellPos.x, cellPos.y].gCost + 10;
+
+            if (gCostToNeighbor < cells[neighborPos.x, neighborPos.y].gCost || !cellsToSearch.Contains(neighborPos))
             {
-                if (x == cellPos.x && y == cellPos.y) continue; // se salta a sí misma
-                if (x < 0 || x >= ancho || y < 0 || y >= alto) continue; // fuera del mapa
+                Cell neighbourNode = cells[neighborPos.x, neighborPos.y];
 
-                Vector2Int neighborPos = new Vector2Int(x, y);
+                neighbourNode.connection = cellPos;
+                neighbourNode.gCost = gCostToNeighbor;
+                neighbourNode.hCost = GetDistance(neighborPos, endPos);
+                neighbourNode.fCost = neighbourNode.gCost + neighbourNode.hCost;
 
-                if (searchedCells.Contains(neighborPos)) continue;
-                if (cells[x, y].isWall) continue;
-
-                int gCostToNeighbor = cells[cellPos.x, cellPos.y].gCost + GetDistance(cellPos, neighborPos);
-
-                if (gCostToNeighbor < cells[x, y].gCost || !cellsToSearch.Contains(neighborPos))
+                if (!cellsToSearch.Contains(neighborPos))
                 {
-                    Cell neighbourNode = cells[x, y];
-
-                    neighbourNode.connection = cellPos;
-                    neighbourNode.gCost = gCostToNeighbor;
-                    neighbourNode.hCost = GetDistance(neighborPos, endPos);
-                    neighbourNode.fCost = neighbourNode.gCost + neighbourNode.hCost;
-
-                    if (!cellsToSearch.Contains(neighborPos))
-                    {
-                        cellsToSearch.Add(neighborPos);
-                    }
+                    cellsToSearch.Add(neighborPos);
                 }
             }
         }
@@ -174,10 +181,8 @@ public class Pathfinding : MonoBehaviour
         int distX = Mathf.Abs(a.x - b.x);
         int distY = Mathf.Abs(a.y - b.y);
 
-        // Distancia diagonal: 14 por paso diagonal, 10 por paso recto (proporción ~√2)
-        if (distX > distY)
-            return 14 * distY + 10 * (distX - distY);
-        return 14 * distX + 10 * (distY - distX);
+        // Distancia Manhattan: solo se suma el avance recto en X e Y
+        return 10 * (distX + distY);
     }
 }
 
