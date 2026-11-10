@@ -4,10 +4,15 @@ using UnityEngine.EventSystems;
 
 public class DrawingCanvas : MonoBehaviour, IDragHandler, IPointerDownHandler
 {
-    public RawImage displayImage;  // RawImage en el UI que muestra el dibujo
+    public RawImage displayImage;  
     public Color brushColor = Color.black;
-    public int brushSize = 5;
-    public int eraserSize = 25;    // NUEVO: Tamaño independiente para la goma
+
+    [Header("Grosor de Pincel y Goma")]
+    [Tooltip("Grosor del lápiz. Proba valores entre 10 y 25 para un trazo más visible")]
+    public int brushSize = 12;      // Aumentado de 5 a 12 por defecto
+    public int eraserSize = 30;    
+    public int tamanoMinimo = 2;
+    public int tamanoMaximo = 40;
 
     private Texture2D _canvas;
     private RectTransform _rectTransform;
@@ -18,6 +23,16 @@ public class DrawingCanvas : MonoBehaviour, IDragHandler, IPointerDownHandler
     void Awake()
     {
         _rectTransform = displayImage.GetComponent<RectTransform>();
+    }
+
+    void Update()
+    {
+        // Opcional: regular grosor con la rueda del mouse mientras dibujas
+        float scroll = Input.mouseScrollDelta.y;
+        if (scroll != 0)
+        {
+            brushSize = Mathf.Clamp(brushSize + (int)scroll * 2, tamanoMinimo, tamanoMaximo);
+        }
     }
 
     public void LoadTexture(Texture2D tex)
@@ -34,18 +49,17 @@ public class DrawingCanvas : MonoBehaviour, IDragHandler, IPointerDownHandler
     private void Draw(PointerEventData eventData)
     {
         Color currentColor;
-        int currentSize; // NUEVO: Variable para saber qué tamaño usar
+        int currentSize;
 
-        // 1. Decidir color y tamaño según el clic
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             currentColor = brushColor;
-            currentSize = brushSize;   // Lápiz
+            currentSize = brushSize;   
         }
         else if (eventData.button == PointerEventData.InputButton.Right)
         {
             currentColor = Color.clear;
-            currentSize = eraserSize;  // Goma
+            currentSize = eraserSize;  
         }
         else
         {
@@ -63,12 +77,10 @@ public class DrawingCanvas : MonoBehaviour, IDragHandler, IPointerDownHandler
         int px = Mathf.RoundToInt(u * _canvas.width);
         int py = Mathf.RoundToInt(v * _canvas.height);
 
-        // 2. Enviamos el color y el tamaño elegidos
         PaintCircle(px, py, currentColor, currentSize);
         _canvas.Apply();
     }
 
-    // 3. Ahora PaintCircle usa "radius" en lugar de brushSize
     private void PaintCircle(int cx, int cy, Color colorToPaint, int radius)
     {
         for (int x = -radius; x <= radius; x++)

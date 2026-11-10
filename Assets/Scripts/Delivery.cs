@@ -5,11 +5,6 @@ public class Delivery : MonoBehaviour
     public IniciarPc ScriptMenu;
     public GameObject Deliver;
     public GameObject UI;
-    public void AlDelivery()
-    {
-        StartCoroutine(Espera(Random.Range(9,11)));
-        
-    }
 
     public void Salir()
     {
@@ -20,10 +15,4 @@ public class Delivery : MonoBehaviour
         Deliver.SetActive(false);
     }
 
-    IEnumerator Espera(float duration)
-    {
-    Debug.Log($"Started at {Time.time}, waiting for {duration} seconds");
-    yield return new WaitForSeconds(duration);
-    Debug.Log($"Ended at {Time.time}"); 
-    }
 }

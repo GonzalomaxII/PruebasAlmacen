@@ -82,4 +82,23 @@ public class MapaCliente : MonoBehaviour
         Vector3Int celdaTilemap = pisoTilemap.WorldToCell(posicionMundo);
         return new Vector2Int(celdaTilemap.x - origen.x, celdaTilemap.y - origen.y);
     }
+
+    // Devuelve true si la posición en el mundo está a 1 casilla (arriba, abajo, izq o der) de un tile de Cajero (5)
+    public bool EstaAlLadoDeCajero(Vector3 posicionMundo)
+    {
+        Vector2Int celdaJugador = MundoACelda(posicionMundo);
+        Vector2Int[] direcciones = { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
+
+        foreach (Vector2Int dir in direcciones)
+        {
+            int vecinoX = celdaJugador.x + dir.x;
+            int vecinoY = celdaJugador.y + dir.y;
+
+            if (vecinoX >= 0 && vecinoX < ancho && vecinoY >= 0 && vecinoY < alto)
+            {
+                if (mapa[vecinoX, vecinoY] == 5) return true;
+            }
+        }
+        return false;
+    }
 }

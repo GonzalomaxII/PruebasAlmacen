@@ -1,27 +1,41 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
-public class Estante : MonoBehaviour
+public class Estante : MonoBehaviour, interacuar
 {
     [Header("Configuración del Mueble")]
-    [Tooltip("Define qué tipo de mueble es este objeto: 2=Estante Naranja, 3=Heladera, 4=Freezer")]
-    public int tipoMueble; 
+    [Tooltip("2 = Estante, 3 = Heladera, 4 = Freezer")]
+    public int tipoMueble = 2; 
 
     [Header("Configuración del Producto")]
-    public Producto producto; // Guarda un único tipo de producto
+    public Producto producto;
     public int stockMaximo = 10;
     public int stockActual = 10;
 
-    [Header("Posición de Interacción")]
+    [Header("Catálogo de Referencia")]
+    [Tooltip("Arrastrá los ScriptableObjects de los productos para identificar la caja que lleva el jugador")]
+    public List<Producto> catalogoProductos;
+
+    [Header("Posición de Interacción NPCs")]
     public Vector2Int celdaParaComprar; 
 
-    // Variable oculta para recordar el último producto válido y poder restaurarlo si hay un error
+    [Header("UI - Feedback en Pantalla")]
+    public IniciarPc ScriptMenu;
+    public GameObject PopUp;
+    public TextMeshProUGUI Agarrado;
+    [Tooltip("Opcional: Arrastrá el botón de cerrar/aceptar del PopUp para vincularlo solo")]
+    public Button botonCerrarPopUp;
+
+    public Valores jugador;
+
     private Producto ultimoProductoValido;
 
     public bool TieneStock() => stockActual > 0;
 
     private void OnValidate()
     {
-        // Si el script se recarga y ya tiene un producto asignado válido de antes, lo recordamos
         if (ultimoProductoValido == null && producto != null && producto.tipoEstante == tipoMueble)
         {
             ultimoProductoValido = producto;
@@ -29,57 +43,168 @@ public class Estante : MonoBehaviour
 
         if (producto != null)
         {
-            // Si el tipo del producto NO coincide con el tipo de este mueble
             if (producto.tipoEstante != tipoMueble)
             {
-                Debug.LogError("Asignación incorrecta de producto. Tipo de estante no coincide");
-                
-                // RESTAURACIÓN: En vez de volverlo null, le devolvemos lo que tenía antes
+                Debug.LogError($"[ERROR DE ASIGNACIÓN] En {gameObject.name}: '{producto.nombreProducto}' no pertenece a este mueble.");
                 producto = ultimoProductoValido; 
             }
             else
             {
-                // Si el producto nuevo sí es válido, actualizamos nuestro registro
                 ultimoProductoValido = producto;
             }
         }
         else
         {
-            // Si vaciaste el estante a propósito en el inspector (arrastrando "None")
             ultimoProductoValido = null;
         }
     }
 
-    // VALIDACIÓN 2: Para el Gameplay (Si el jugador cambia productos jugando)
-    public bool IntentarAsignarProducto(Producto nuevoProducto)
+    public bool puedeinteract()
     {
-        // Permitir vaciar el estante voluntariamente
-        if (nuevoProducto == null)
-        {
-            producto = null;
-            stockActual = 0;
-            ultimoProductoValido = null;
-            return true;
-        }
-
-        // Validar si el tipo de producto coincide con el tipo de mueble
-        if (nuevoProducto.tipoEstante == tipoMueble)
-        {
-            producto = nuevoProducto;
-            stockActual = stockMaximo; 
-            ultimoProductoValido = nuevoProducto;
-            return true; // Cambio exitoso
-        }
-
-        // Si NO coincide, tira el print de error y retorna false
-        Debug.LogError($"<color=orange><b>[ACCIÓN RECHAZADA EN JUEGO]</b></color> No se pudo colocar '{nuevoProducto.nombreProducto}' " +
-                       $"en el mueble <b>{gameObject.name}</b>. Los tipos no coinciden (Mueble: {tipoMueble} | Producto: {nuevoProducto.tipoEstante}). " +
-                       $"El estante conserva su producto actual: {(producto != null ? producto.nombreProducto : "Ninguno")}.");
-        
-        return false; 
+        if (ScriptMenu == null) return true;
+        return !ScriptMenu.MenuAbierto;
     }
-  
-    public int RetirarStock(int cantidadPedida) // El cliente llama a esto para llevarse mercadería
+
+    public void interact()
+    {
+        if (!puedeinteract()) return;
+
+        if (jugador == null)
+            jugador = FindObjectOfType<Valores>();
+
+        // 1. Validar si el jugador no tiene ninguna caja en mano
+        if (!jugador.tieneCaja && jugador.unidadesCaja == 0)
+        {
+            if (producto != null)
+            {
+                MostrarMensaje($"Mueble: {ObtenerNombreMueble(tipoMueble)}\n" +
+                               $"Producto asignado: {producto.nombreProducto}\n" +
+                               $"Necesitás una caja de este producto para reponer.");
+            }
+            else
+            {
+                MostrarMensaje($"Este {ObtenerNombreMueble(tipoMueble).ToLower()} está vacío.\n" +
+                               $"Traé una caja adecuada para asignarle mercadería.");
+            }
+            return;
+        }
+
+        // 2. Si el estante está vacío de fábrica, intentar asignarle el producto de la caja
+        if (producto == null)
+        {
+            Producto prodAsignar = BuscarProductoPorNombre(jugador.tipoCaja);
+
+            if (prodAsignar == null)
+            {
+                MostrarMensaje("Error: No se reconoce el producto que llevás en la caja.");
+                return;
+            }
+
+            // ERROR: El tipo del producto no corresponde a este mueble
+            if (prodAsignar.tipoEstante != tipoMueble)
+            {
+                string muebleActual = ObtenerNombreMueble(tipoMueble);
+                string muebleRequerido = ObtenerNombreMueble(prodAsignar.tipoEstante);
+
+                MostrarMensaje($"<color=red>¡TIPO INCORRECTO!</color>\n\n" +
+                               $"No podés colocar '{prodAsignar.nombreProducto}' en este/a {muebleActual}.\n" +
+                               $"Este producto requiere: <b>{muebleRequerido}</b>.");
+                return;
+            }
+
+            // Asignación válida
+            producto = prodAsignar;
+            ultimoProductoValido = prodAsignar;
+            stockActual = 0; // Comienza listo para recibir la carga
+        }
+
+        // 3. ERROR: El estante ya tenía un producto asignado y la caja es de otro distinto
+        if (!producto.nombreProducto.Equals(jugador.tipoCaja, System.StringComparison.OrdinalIgnoreCase))
+        {
+            MostrarMensaje($"<color=red>¡PRODUCTO INCORRECTO!</color>\n\n" +
+                           $"Este mueble es exclusivo para: <b>{producto.nombreProducto}</b>.\n" +
+                           $"Estás intentando colocar una caja de: {jugador.tipoCaja}.");
+            return;
+        }
+
+        // 4. Validar si el estante ya no admite más unidades
+        int espacioLibre = stockMaximo - stockActual;
+        if (espacioLibre <= 0)
+        {
+            MostrarMensaje($"El estante de {producto.nombreProducto} ya está completamente lleno.\n" +
+                           $"Guardá la caja de nuevo en el depósito.");
+            return;
+        }
+
+        // 5. ÉXITO: Reposición de mercadería
+        int aReponer = Mathf.Min(jugador.unidadesCaja, espacioLibre);
+        stockActual += aReponer;
+        jugador.unidadesCaja -= aReponer;
+        jugador.cantidad = jugador.unidadesCaja;
+
+        // La caja se vació por completo
+        if (jugador.unidadesCaja == 0)
+        {
+            jugador.tieneCaja = false;
+            jugador.tipoCaja = "";
+            jugador.cantidad = 0;
+
+            MostrarMensaje($"<color=green>¡ÉXITO!</color>\n\n" +
+                           $"Colocaste {producto.nombreProducto} en el/la {ObtenerNombreMueble(tipoMueble).ToLower()}.\n" +
+                           $"La caja quedó vacía y la desechaste.");
+        }
+        // A la caja aún le quedan elementos
+        else
+        {
+            MostrarMensaje($"<color=green>¡ÉXITO!</color>\n\n" +
+                           $"Repusiste {producto.nombreProducto} en el mueble.\n" +
+                           $"La caja todavía tiene mercadería adentro.");
+        }
+    }
+
+    private string ObtenerNombreMueble(int tipo)
+    {
+        switch (tipo)
+        {
+            case 2: return "Estante";
+            case 3: return "Heladera";
+            case 4: return "Freezer";
+            default: return "Mueble";
+        }
+    }
+
+    private Producto BuscarProductoPorNombre(string nombre)
+    {
+        if (catalogoProductos == null) return null;
+        foreach (Producto p in catalogoProductos)
+        {
+            if (p.nombreProducto.Equals(nombre, System.StringComparison.OrdinalIgnoreCase))
+                return p;
+        }
+        return null;
+    }
+
+    private void MostrarMensaje(string mensaje)
+    {
+        if (ScriptMenu != null) ScriptMenu.MenuAbierto = true;
+        if (PopUp != null) PopUp.SetActive(true);
+        if (Agarrado != null) Agarrado.text = mensaje;
+
+        // Si asignaste el botón de cerrar, le configuramos el clic automáticamente
+        if (botonCerrarPopUp != null)
+        {
+            botonCerrarPopUp.onClick.RemoveAllListeners();
+            botonCerrarPopUp.onClick.AddListener(CerrarAviso);
+        }
+    }
+
+    public void CerrarAviso()
+    {
+        if (PopUp != null) PopUp.SetActive(false);
+        if (ScriptMenu != null) ScriptMenu.MenuAbierto = false;
+    }
+
+    public int RetirarStock(int cantidadPedida)
     {
         int cantidadDada = Mathf.Min(cantidadPedida, stockActual);
         stockActual -= cantidadDada;

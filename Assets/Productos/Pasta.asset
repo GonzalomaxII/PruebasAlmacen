@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Producto
   nombreProducto: Pasta
   tipoEstante: 3
+  precio: 250

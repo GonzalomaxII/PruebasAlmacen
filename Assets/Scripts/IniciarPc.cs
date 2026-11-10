@@ -5,12 +5,17 @@ using UnityEngine;
 public class IniciarPc : MonoBehaviour, interacuar
 {
 
-    public bool MenuAbierto= false;
+    public bool MenuAbierto = false;
     public GameObject Tienda;
     public GameObject UI;
     public GameObject Delivery;
     public Valores ScriptValores;
-    
+    public Tienda TiendaUI;
+
+    void Update()
+    {
+        TiendaUI.ActualizarUI();
+    }
     public bool puedeinteract()
     {
         return !MenuAbierto;
@@ -21,6 +26,7 @@ public class IniciarPc : MonoBehaviour, interacuar
         if (!puedeinteract()) return; 
         iniciapc(true);
     }
+
 
 
     private void iniciapc(bool abierto)

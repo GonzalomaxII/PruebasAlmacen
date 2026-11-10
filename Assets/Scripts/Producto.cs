@@ -7,4 +7,6 @@ public class Producto : ScriptableObject
     
     [Tooltip("2 = Estante Naranja, 3 = Heladera, 4 = Freezer")]
     public int tipoEstante; 
+
+    public int precio = 10;
 }

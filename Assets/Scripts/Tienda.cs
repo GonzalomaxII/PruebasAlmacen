@@ -4,21 +4,21 @@ using TMPro;
 public class Tienda : MonoBehaviour
 {
 
-    private int enlatados = 0;
-    private int especias = 0;
-    private int carne = 0;
-    private int pasta = 0;
-    private int pizza = 0;
-    private int fritos = 0;
-    private int total = 0;
+    public int enlatados = 0;
+    public int especias = 0;
+    public int carne = 0;
+    public int pasta = 0;
+    public int pizza = 0;
+    public int fritos = 0;
+    public int total = 0;
 
-    private int balance = 10000;
-    private int cantidad = 0;
+    public int cantidad = 0;
     public TextMeshProUGUI TotalTXT;
     public TextMeshProUGUI CantidadTXT;
     public TextMeshProUGUI BalanceTXT;
     public TextMeshProUGUI BalanceUI;
     public Valores ScriptValores;
+    public MovimientoCamion movingObject; 
 
     public IniciarPc ScriptMenu;
 
@@ -28,12 +28,13 @@ public class Tienda : MonoBehaviour
     public GameObject Carga;
     public Delivery Deliver;
 
+    
     public void AnadirEnlatados()
     {
         enlatados++;
         cantidad++;
         total+=500;
-        ActualizarUI();
+        
     }
 
     public void AnadirEspecias()
@@ -41,7 +42,7 @@ public class Tienda : MonoBehaviour
         especias++;
         cantidad++;
         total+=200;
-        ActualizarUI();
+        
     }
 
     public void AnadirCarne()
@@ -49,7 +50,7 @@ public class Tienda : MonoBehaviour
         carne++;
         cantidad++;
         total+=1000;
-        ActualizarUI();
+        
     }
 
     public void AnadirPasta()
@@ -57,7 +58,7 @@ public class Tienda : MonoBehaviour
         pasta++;
         cantidad++;
         total+=250;
-        ActualizarUI();
+        
     }
 
     public void AnadirPizza()
@@ -65,7 +66,7 @@ public class Tienda : MonoBehaviour
         pizza++;
         cantidad++;
         total+=500;
-        ActualizarUI();
+        
     }
 
     public void AnadirFritos()
@@ -73,7 +74,7 @@ public class Tienda : MonoBehaviour
         fritos++;
         cantidad++;
         total+=700;
-        ActualizarUI();
+        
     }
     public void VaciarCompras()
     {
@@ -85,26 +86,18 @@ public class Tienda : MonoBehaviour
         fritos=0;
         cantidad=0;
         total=0;
-        ActualizarUI();
+        
     }
 
     public void ConfirmarCompra()
     {
         if(ScriptValores.Plata-total>0){
-            enlatados=0;
-            especias=0;
-            carne=0;
-            pasta=0;
-            pizza=0;
-            fritos=0;
-            cantidad=0;
             ScriptValores.Plata-=total;
             total=0;
-            balance=ScriptValores.Plata;
             ScriptValores.EstadoDelivery=1;
+            movingObject.MoveToFirstPosition();
             Carga.SetActive(true);
-            Deliver.AlDelivery();
-            ActualizarUI();
+            
             Comprar.SetActive(false);
         }
     }
@@ -113,18 +106,19 @@ public class Tienda : MonoBehaviour
 
     public void Salir()
     {
+        VaciarCompras();
         Comprar.SetActive(false);
         var canvas = UI.GetComponent<Canvas>();
         canvas.enabled = true;
         ScriptMenu.MenuAbierto=false;
     }
     
-    private void ActualizarUI()
+    public void ActualizarUI()
     {
         if (TotalTXT != null) TotalTXT.text = "Total: "+total.ToString();
         if (CantidadTXT != null) CantidadTXT.text = "Cantidad: "+cantidad.ToString();
-        if (BalanceTXT != null) BalanceTXT.text = "Balance: "+balance.ToString()+"$";
-        if (BalanceUI != null) BalanceUI.text = "Balance: "+balance.ToString()+"$";
+        if (BalanceTXT != null) BalanceTXT.text = "Balance: "+ScriptValores.Plata.ToString()+"$";
+        if (BalanceUI != null) BalanceUI.text = "Balance: "+ScriptValores.Plata.ToString()+"$";
     }
     
 }
